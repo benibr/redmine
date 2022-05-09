@@ -1277,7 +1277,7 @@ module ApplicationHelper
   LINKS_RE =
     %r{
             <a( [^>]+?)?>(?<tag_content>.*?)</a>|
-            (?<leading>[\s\(,\-\[\>]|^)
+            (?<leading>[\s\(,\-\[\>\/]|^)
             (?<esc>!)?
             (?<project_prefix>(?<project_identifier>[a-z0-9\-_]+):)?
             (?<prefix>attachment|document|version|forum|news|message|project|commit|source|export|user)?
@@ -1307,6 +1307,8 @@ module ApplicationHelper
             )
             (?=
               (?=[[:punct:]][^A-Za-z0-9_/])|
+              \-|
+              _|
               ,|
               \s|
               \]|

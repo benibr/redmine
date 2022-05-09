@@ -135,7 +135,7 @@ class Changeset < ActiveRecord::Base
     referenced_issues = []
     regexp =
       %r{
-        ([\s\(\[,-]|^)((#{kw_regexp})[\s:]+)?
+        ([\s\(\[,-\/]|^)((#{kw_regexp})[\s:]+)?
         (\#\d+(\s+@#{TIMELOG_RE})?([\s,;&]+\#\d+(\s+@#{TIMELOG_RE})?)*)
         (?=[[:punct:]]|\s|<|$)
       }xi
